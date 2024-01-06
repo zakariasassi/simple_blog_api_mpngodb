@@ -137,8 +137,8 @@ exports.getallbyid = async (req , res ) => {
 exports.update = async (req , res ) => {
 
     try {
-        await BlogModel.findOneAndUpdate({_id : req.params.id}, 
-            {state : true} ).then(() => {
+        await BlogModel.findOneAndUpdate({_id : req.query.id}, 
+            {state : false} ).then(() => {
             res.json({
                 msg : "Blog updated successfully",
                 state: 1,
@@ -165,14 +165,14 @@ exports.update = async (req , res ) => {
 
 exports.delete = async (req , res ) => {
     try {
-        await BlogModel.findOneAndDelete({_id : req.params.id}).then(() => {
+        await BlogModel.findOneAndDelete({_id : req.query.id}).then(() => {
             res.json({
                 msg : "BLog deleted  successfully 👍🏼",
                 state: 1,
                 date : []
             })
         }).catch(error => {
-            console.log(error)
+            console.log(eror)
             res.json({
                 msg : "Internal server",
                 state : 0,
