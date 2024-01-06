@@ -6,7 +6,7 @@ exports.login = async (req, res) => {
 
   if (!username || !password) {
     return res.json({
-      msg: " Username or password incorrect",
+      msg: " Username or password incorrect 🚨",
       state: 0,
       data: [],
     });

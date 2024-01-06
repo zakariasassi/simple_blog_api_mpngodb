@@ -125,7 +125,7 @@ exports.getallbyid = async (req , res ) => {
      } catch (error) {
         console.log(error)
         res.json({
-            msg : "Internal Server Error",
+            msg : "Internal Server Error 🚨",
             state : 1,
             data : []
         })
@@ -167,7 +167,7 @@ exports.delete = async (req , res ) => {
     try {
         await BlogModel.findOneAndDelete({_id : req.params.id}).then(() => {
             res.json({
-                msg : "BLog deleted successfully",
+                msg : "BLog deleted  successfully 👍🏼",
                 state: 1,
                 date : []
             })
